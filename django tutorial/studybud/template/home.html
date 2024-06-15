@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<style>
+    .hero {
+        background: url("{% static 's1.jpg' %}") no-repeat center top; /* Adjusted position */
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        position: relative;
+        overflow: hidden;
+    }
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .hero h1 {
+        font-size: 4rem;
+        animation: slideInLeft 1s ease-in-out;
+    }
+    .hero p {
+        font-size: 1.5rem;
+        animation: slideInRight 1s ease-in-out;
+    }
+    .section-title {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    .section-content {
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+        from { transform: translateX(-100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+        from { transform: translateY(100%); }
+        to { transform: translateY(0); }
+    }
+    .navbar-nav .nav-link:hover {
+        color: #ff5722 !important;
+        transition: color 0.3s ease-in-out;
+    }
+
+    /* Adjust the background for smaller screens */
+    @media (max-width: 768px) {
+        .hero {
+            background-position: center top;
+        }
+    }
+
+    /* Styling for sections */
+    .introduction-section {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+    }
+
+    .skills-section {
+        background-color: #eaeaea;
+        padding: 50px 0;
+    }
+
+    .projects-section {
+        background-color: #f5f5f5;
+        padding: 50px 0;
+    }
+
+    /* Additional hover effect */
+    .section-content li:hover {
+        color: #ff5722;
+        transition: color 0.3s ease-in-out;
+    }
+</style>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Discover my work and projects</p>
+    </div>
+</div>
+
+<div class="container introduction-section">
+    <h2 class="section-title">Introduction</h2>
+    <div class="section-content">
+        <p>Hello! My name is Sujal Vyas, and I am delighted to present my portfolio. With a passion for web developing  with python(Django),  I have dedicated myself to honing my skills and delivering high-quality work. My journey has been driven by a commitment to excellence, creativity, and continuous learning.
+
+            Throughout my career, I have been involved in a variety of projects that showcase my expertise and versatility. From [briefly mention some of your notable projects or experiences, e.g., developing user-friendly applications, creating compelling visual content, executing successful marketing campaigns], each experience has enriched my understanding and capability in [your field].
+            
+            I am always eager to take on new challenges and collaborate with others to create impactful solutions. My portfolio is a reflection of my professional journey, highlighting my achievements, skills, and the value I bring to any team or project.
+            
+            Thank you for taking the time to review my work. I look forward to the possibility of working together and contributing to exciting new ventures.
+            
+            Best regards,
+            Sujal Vyas</p>
+    </div>
+</div>
+
+<div class="container skills-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-content">
+        <p>Here are some of my key skills:</p>
+        <ul>
+            <li>Web Development (HTML, CSS, Django)</li>
+            <li>Data Analysis (Python, Pandas, NumPy)</li>
+            <li>Database Management (SQL)</li>
+            <li>Version Control (Git, GitHub)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="container projects-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="section-content">
+        <p>Take a look at some of the projects I've worked on:</p>
+        <ul>
+            <p> i will upload my projects ------------------------------------------------------------very soon</p>
+        </ul>
+    </div>
+</div>
+
+{% endblock body %}

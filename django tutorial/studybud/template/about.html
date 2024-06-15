@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About Me{% endblock title %}
+{% block body %}
+
+<style>
+    /* Style for the about section */
+    .about-section {
+        padding: 50px 0;
+        text-align: center;
+        background-color: #f5f5f5;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #666;
+    }
+
+    .photo-gallery {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .photo-gallery img {
+        width: 200px;
+        height: 200px;
+        margin: 0 10px;
+        border-radius: 50%;
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-gallery img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Additional styles */
+    .interests-section {
+        background-color: #e0e0e0;
+        padding: 50px 0;
+    }
+
+    .interests-section h3 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .interests-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .interests-list-item {
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .interests-list-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<div class="container about-section">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>Hello! My name is Sujal Vyas, and I am currently pursuing a Bachelor of Information Technology with a major in Web Application Development and Web Development at Victoria University, Sydney Campus. As a second-year student, I am passionate about leveraging technology to create dynamic and responsive web applications that enhance user experiences.
+
+            My journey in the world of technology began with a strong interest in coding and web development, which has only grown over the years. I have gained practical experience through my role as a Project Intern at Special Character Company in Ahmedabad, India. During my 6-month internship, I had the opportunity to work on real-world projects, where I applied my skills in HTML, CSS, Python, and SQL to develop and maintain web applications.
+            
+            In addition to my technical skills, I am committed to continuous learning and staying updated with the latest industry trends. This dedication ensures that I can bring innovative solutions to any project I undertake. My academic background, combined with hands-on experience, has equipped me with a solid foundation in both the theoretical and practical aspects of web development.
+            
+            I am enthusiastic about collaborating with professionals and organizations to contribute to impactful projects. Whether it's developing a new web application from scratch or optimizing an existing one, I am eager to apply my knowledge and skills to solve complex challenges and deliver high-quality results.
+            
+            Thank you for visiting my portfolio. I look forward to connecting with like-minded individuals and exploring opportunities to create exceptional web experiences together.</p>
+        
+    </div>
+
+    <div class="photo-gallery">
+        <!-- Add your photos here -->
+        <img src="{% static 's2.jpeg'%}" alt="Photo 1">
+        <img src="{% static 's6.jpeg' %}" alt="Photo 2">
+        <img src="{% static 's4.jpeg' %}" alt="Photo 3">
+        <!-- Add more photos as needed -->
+    </div>
+>
+
+<div class="container interests-section">
+    <h3>Interests</h3>
+    <ul class="interests-list">
+        <li class="interests-list-item">listening music</li>
+        <li class="interests-list-item">exploring new places</li>
+        <li class="interests-list-item">learning new technologies</li>
+        <!-- Add more interests as needed -->
+    </ul>
+</div>
+
+{% endblock body %}

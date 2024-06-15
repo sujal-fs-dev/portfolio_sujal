@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contact Me{% endblock title %}
+{% block body %}
+
+<style>
+    .contact-section {
+        padding: 50px 0;
+    }
+    .contact-form {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form h2 {
+        margin-bottom: 20px;
+    }
+    .contact-form .form-group {
+        margin-bottom: 15px;
+    }
+    .contact-form .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .contact-form .form-group textarea {
+        height: 150px;
+        resize: vertical;
+    }
+    .contact-form button {
+        padding: 10px 20px;
+        background: #ff5722;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .social-icons {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #fff;
+        background: #333;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        transition: background 0.3s;
+    }
+    .social-icons a:hover {
+        background: #ff5722;
+    }
+</style>
+
+<div class="container contact-section">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required placeholder="enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="desc" class="form-control" required></textarea>
+                    </div>
+                   
+                    <button type="submit">Send</button>
+                </form>
+                <div class="social-icons">
+                    <a href="" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/yourprofile" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add FontAwesome for social icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+{% endblock body %}
